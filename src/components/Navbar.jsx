@@ -6,8 +6,7 @@ import Switch from "./Switch";
 
 const Navbar = () => {
   const { currentUser, logOut } = useContext(AuthContext);
-
-  // const currentUser = { displayName: "Akif KA" };
+  console.log("🚀 ~ file: Navbar.jsx:9 ~ Navbar ~ currentUser:", currentUser);
 
   return (
     <div>
@@ -17,7 +16,7 @@ const Navbar = () => {
       >
         <div className="flex w-full flex-wrap items-center justify-between px-6">
           <Link className="pr-2 text-2xl font-semibold" to="/">
-            React Movie App
+            Film App
           </Link>
 
           <button
@@ -85,7 +84,55 @@ const Navbar = () => {
             {/* Left links */}
           </div>
 
-          <div className="relative flex items-center">
+          <Switch />
+          <div className="newMenu flex flex-col pl-0 lg:flex-row ">
+            {currentUser ? (
+              <div className="userMenu flex items-center">
+                <img
+                  src={currentUser.photoURL || avatar}
+                  className="rounded-full"
+                  style={{ height: 25, width: 25 }}
+                  alt=""
+                  loading="lazy"
+                />
+                <h5 className="m-2 text-sm ">{currentUser.displayName}</h5>
+                <span
+                  className="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                  role="button"
+                  data-te-dropdown-item-ref=""
+                  onClick={() => logOut()}
+                >
+                  Logout
+                </span>
+              </div>
+            ) : (
+              <div className="anonymousMenu flex items-center">
+                <img
+                  src={currentUser.photoURL || avatar}
+                  className="rounded-full"
+                  style={{ height: 25, width: 25 }}
+                  alt=""
+                  loading="lazy"
+                />
+                <Link
+                  className="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                  to="/register"
+                  data-te-dropdown-item-ref=""
+                >
+                  Register
+                </Link>
+                <Link
+                  className="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                  to="/login"
+                  data-te-dropdown-item-ref=""
+                >
+                  Login
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* <div className="relative flex items-center">
             {currentUser && (
               <h5 className="mr-2 text-sm ">{currentUser.displayName}</h5>
             )}
@@ -142,7 +189,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
           {/* Right elements */}
         </div>
       </nav>
