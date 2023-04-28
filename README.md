@@ -1,9 +1,7 @@
-
 ```
-009 - Movie App (folder)
-|
-|----readme.md         # Given to the students (Definition of the project)
-SOLUTION
+PROJECT
+├──cypress
+│     └── e2e
 ├── public
 │     └── index.html
 ├── src
@@ -50,3 +48,4 @@ Build a Movie App using ReactJS.
 
 - ReactJS
 
+- Cypress
