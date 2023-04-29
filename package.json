@@ -1,6 +1,9 @@
 {
-  "name": "movie-app-1",
-  "version": "0.1.0",
+  "name": "film-app",
+  "version": "0.1.1",
+  "author": {
+    "name": "Eyp"
+  },
   "private": true,
   "dependencies": {
     "axios": "^0.26.0",

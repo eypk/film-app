@@ -27,7 +27,7 @@ const AppRouter = () => {
           <Route path="" element={<MovieDetail />} />
         </Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
