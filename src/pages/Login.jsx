@@ -64,7 +64,11 @@ const Login = () => {
               Sign Up
             </Link>
           </div>
-          <button className="btn-danger" type="submit">
+          <button
+            className="btn-danger"
+            type="submit"
+            data-test="loginLoginBtn"
+          >
             Login
           </button>
 
