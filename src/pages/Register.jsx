@@ -75,7 +75,7 @@ const Register = () => {
             />
             <label htmlFor="floating_password">Password</label>
           </div>
-          <button className="btn-danger" type="submit">
+          <button className="btn-danger" type="submit" data-test="registerBtn">
             Register
           </button>
           <button
