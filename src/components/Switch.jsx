@@ -12,6 +12,7 @@ const Switch = () => {
   return (
     <div className="flex col-span-1 justify-end">
       <button
+        data-test="navbarSwitchBtn"
         type="button"
         title="Toggle dark/light mode"
         onClick={() => setDarkMode(!darkMode)}
